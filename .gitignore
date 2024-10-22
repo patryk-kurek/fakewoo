@@ -2,3 +2,5 @@ wp-content/
 logs/
 .vscode/
 elasticsearch-data/
+.env
+google-credentials.json
