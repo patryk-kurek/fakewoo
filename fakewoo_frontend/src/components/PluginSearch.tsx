@@ -51,6 +51,7 @@ function PluginSearch() {
         `http://localhost:8000/api.php?plugin_to_install=${slug}`
       );
       console.log(response.data);
+      alert("Succesfully installed plugin");
     } catch (error) {
       console.error("Error installing plugin:", error);
   }
@@ -76,7 +77,7 @@ function PluginSearch() {
             style={{ border: "1px solid black", borderRadius: "10px" }}
           >
             <h2>{plugin.name}</h2>
-            <h3>{plugin.author.split(">")[1].split("<")[0]}</h3>
+            <h3>{plugin.author?.split(">")[1]?.split("<")[0]}</h3>
             <h3>{plugin.version}</h3>
             <a href={plugin.homepage}>Homepage</a>
             <Button onClick={()=>installPlugin(plugin.slug)}>Install</Button>
